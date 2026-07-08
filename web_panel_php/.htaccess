@@ -1,0 +1,87 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    Options +FollowSymLinks
+    Options -Indexes
+    RewriteCond %{SCRIPT_FILENAME} !-d  
+    RewriteCond %{SCRIPT_FILENAME} !-f
+    RewriteRule . index.php [L,QSA]
+</IfModule>
+
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+<ifmodule mod_headers.c>
+    #Header always edit Set-Cookie (.*) "$1; SameSite=Lax"
+    Header always edit Set-Cookie (.*) "$1; SameSite=Lax"
+</ifmodule> 
+
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy "frame-ancestors 'self'"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# GZIP Compression (mod_deflate)
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    # Force compression for XML, HTML, CSS, JavaScript, and fonts
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Browser Caching / Expires Headers (mod_expires)
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # CSS & JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+
+    # Images
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/opentype "access plus 1 year"
+    ExpiresByType font/truetype "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/x-font-woff "access plus 1 year"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Force aggressive caching via Cache-Control headers
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|gif|png|jpg|jpeg|webp|ico|svg|woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>

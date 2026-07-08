@@ -1,0 +1,1158 @@
+/* 
+   APP DASHBOARD OVERRIDES - MINIMALIST PREMIUM DESIGN
+   Concept: Elegant, Structured, Data-Centric
+*/
+
+:root {
+    --bg-obsidian: #050505; /* Blacker obsidian */
+    --bg-card: rgba(20, 20, 20, 0.85);
+    --border-dim: rgba(212, 175, 55, 0.15); /* Thin gold border */
+    --accent-blue: #D4AF37; /* Royal Gold */
+    --accent-gold: #D4AF37;
+    --accent-gold-light: #F9E272;
+    --text-pure: #ffffff;
+    --text-dim: #a1a1aa;
+    --text-muted: #71717a;
+}
+
+/* Global Foundations */
+body {
+    background-color: var(--bg-obsidian) !important;
+    color: var(--text-pure) !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Cleansing the default SmartPanel UI */
+.app-dashboard-active .header.top,
+.app-dashboard-active .header.collapse,
+.app-dashboard-active .footer.footer_top,
+.app-dashboard-active footer.footer_bottom,
+.app-dashboard-active .page-overplay {
+    display: none !important;
+}
+
+.app-dashboard-active .page-main {
+    padding-top: 20px !important;
+    padding-bottom: 100px !important;
+}
+
+/* Container Precision */
+.app-dashboard-active .container {
+    max-width: 600px !important;
+    /* Mobile-first focused width */
+    margin: 0 auto;
+}
+
+/* Card Refinement - Glassmorphism Evolution */
+.app-dashboard-active .card {
+    background: var(--bg-card) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--border-dim) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3) !important;
+    margin-bottom: 20px !important;
+    overflow: hidden;
+}
+
+.app-dashboard-active .card-header {
+    padding: 18px 20px !important;
+    border-bottom: 1px solid var(--border-dim) !important;
+}
+
+.app-dashboard-active .card-title {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: var(--text-pure) !important;
+    letter-spacing: -0.2px;
+}
+
+/* Statistics Header Items */
+.app-dashboard-active .statistics .item .card {
+    padding: 16px !important;
+}
+
+.app-dashboard-active .stamp {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: var(--accent-blue) !important;
+    border-radius: 10px !important;
+    width: 38px !important;
+    height: 38px !important;
+    line-height: 38px !important;
+}
+
+.app-dashboard-active .statistics .number {
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+    color: var(--text-pure);
+}
+
+.app-dashboard-active .statistics .text-muted {
+    font-size: 11px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-dim) !important;
+}
+
+/* Premium Stamp (Glow Effect) */
+.app-dashboard-active .premium-stamp {
+    width: 44px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    border-radius: 12px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-dashboard-active .premium-stamp-blue {
+    background: rgba(99, 102, 241, 0.15) !important;
+    color: #818cf8 !important;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
+}
+
+.app-dashboard-active .premium-stamp-gold {
+    background: rgba(255, 215, 0, 0.15) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.app-dashboard-active .premium-stamp-green {
+    background: rgba(34, 197, 94, 0.15) !important;
+    color: #4ade80 !important;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.1);
+}
+
+/* Modern Header (Greeting & Balance) */
+.app-user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 10px 4px;
+}
+
+.app-user-header .greeting h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.app-user-header .greeting p {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+/* DEEP PREMIUM UI - DASHBOARD ENHANCEMENTS */
+
+/* Quick Actions Grid */
+.quick-actions-grid .action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.quick-actions-grid .action-item:active {
+    transform: scale(0.9);
+}
+.quick-actions-grid .icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #000;
+}
+.quick-actions-grid span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.bg-gold-glow {
+    background: linear-gradient(135deg, var(--accent-gold), #F9E272);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Metric Carousel */
+.premium-carousel-wrapper {
+    margin: 0 -15px 1.5rem -15px;
+    padding: 0 15px;
+}
+.premium-metrics-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+.premium-metrics-row .item {
+    scroll-snap-align: start;
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    padding-right: 10px;
+}
+@media (min-width: 768px) {
+    .premium-metrics-row {
+        flex-wrap: wrap !important;
+        overflow: visible !important;
+    }
+    .premium-metrics-row .item {
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+}
+.premium-metric-card {
+    background: rgba(20, 20, 20, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.1) !important;
+    border-radius: 20px !important;
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+.premium-metric-card:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.05), transparent);
+    pointer-events: none;
+}
+.mini-sparkline {
+    height: 30px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.05) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: sparklinePulse 3s infinite linear;
+    mask-image: linear-gradient(to bottom, transparent 20%, #000 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 20%, #000 100%);
+}
+@keyframes sparklinePulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Hide Scrollbar helper */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.app-user-header .balance-badge {
+    background: var(--accent-blue);
+    color: #000000;
+    padding: 10px 18px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-user-header .balance-badge:active {
+    transform: scale(0.92);
+}
+
+.app-dashboard-active .premium-stamp-blue {
+    background: rgba(212, 175, 55, 0.15) !important;
+    color: #D4AF37 !important;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.premium-stamp-gold {
+    background: linear-gradient(45deg, #B8860B, #D4AF37) !important;
+    color: #000 !important;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+/* PREMIUM BOTTOM SHEET */
+.premium-bottom-sheet {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 9999;
+    visibility: hidden;
+    transition: visibility 0.3s;
+}
+.premium-bottom-sheet.show {
+    visibility: visible;
+}
+.premium-bottom-sheet .sheet-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.premium-bottom-sheet.show .sheet-overlay {
+    opacity: 1;
+}
+.premium-bottom-sheet .sheet-content {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    background: #121212;
+    border-radius: 25px 25px 0 0;
+    border-top: 2px solid var(--accent-gold);
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 1, 0.23, 1);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+.premium-bottom-sheet.show .sheet-content {
+    transform: translateY(0);
+}
+.premium-bottom-sheet .sheet-header {
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.premium-bottom-sheet .handle {
+    width: 40px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    margin: 0 auto 10px;
+}
+.premium-bottom-sheet h5 {
+    margin: 0;
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+.premium-bottom-sheet .close-sheet {
+    position: absolute;
+    right: 15px; top: 15px;
+    background: none; border: none; color: #fff;
+    font-size: 20px;
+}
+.premium-bottom-sheet .sheet-body {
+    padding: 10px 0;
+}
+.premium-bottom-sheet .list-group-item {
+    background: transparent !important;
+    color: #fff !important;
+    border: none;
+    padding: 15px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.premium-bottom-sheet .list-group-item:active {
+    background: rgba(212, 175, 55, 0.1) !important;
+}
+
+/* FLOATING COST BADGE */
+.floating-cost-badge {
+    background: linear-gradient(135deg, var(--accent-gold), #F9E272);
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    animation: badgePop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+}
+.floating-cost-badge .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-right: 5px;
+    opacity: 0.8;
+}
+@keyframes badgePop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.floating-cost-badge.pulse-glow {
+    animation: badgePulseGlow 0.5s ease-out;
+}
+
+@keyframes badgePulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); transform: scale(1); }
+    50% { box-shadow: 0 0 20px 10px rgba(212, 175, 55, 0); transform: scale(1.05); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); transform: scale(1); }
+}
+
+/* Confetti Success Animation */
+.confetti-canvas {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+/* Bottom Navigation - Premium App Style */
+.app-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 20, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-dim);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 10px 34px 10px;
+    z-index: 9999;
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.app-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-muted);
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+    touch-action: manipulation;
+}
+
+.app-nav-item svg {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 4px;
+    fill: currentColor;
+}
+
+.app-nav-item span {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.app-nav-item.active {
+    color: var(--accent-blue);
+}
+
+/* Prevent blue highlight or browser flash on click/tap/active/hover */
+a.app-nav-item:focus,
+a.app-nav-item:visited {
+    color: inherit !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+a.app-nav-item:hover,
+a.app-nav-item:active {
+    color: inherit !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+a.app-nav-item.active:focus,
+a.app-nav-item.active:active,
+a.app-nav-item.active:hover {
+    color: var(--accent-blue) !important;
+    background: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+a.app-nav-item.active,
+a.app-nav-item.active:focus,
+a.app-nav-item.active:active,
+a.app-nav-item.active:hover {
+    color: var(--accent-blue) !important;
+    text-decoration: none !important;
+}
+
+/* Active Dot Indicator */
+.app-nav-item .active-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    margin-top: 4px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+.app-nav-item.active .active-dot {
+    opacity: 1;
+}
+
+.app-nav-item:active {
+    transform: scale(0.9);
+}
+
+/* Charts Customization */
+#orders_chart_spline,
+#orders_chart_pie {
+    filter: invert(0) !important;
+    /* Ensure visibility on dark */
+}
+
+/* Data Display & Tables */
+.app-dashboard-active .table {
+    margin-bottom: 0 !important;
+    background: transparent !important;
+}
+
+.app-dashboard-active .table th {
+    background: transparent !important;
+    border-bottom: 1px solid var(--border-dim) !important;
+    color: var(--text-muted) !important;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 12px 20px !important;
+}
+
+.app-dashboard-active .table td {
+    border-bottom: 1px solid var(--border-dim) !important;
+    padding: 16px 20px !important;
+    font-size: 14px;
+    color: var(--text-dim) !important;
+}
+
+.app-dashboard-active .table tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Charts Containers */
+.app-dashboard-active .charts .card {
+    padding: 10px !important;
+}
+
+.app-dashboard-active .charts .card-header {
+    border-bottom: none !important;
+}
+
+/* Badge Refinement */
+.app-dashboard-active .badge {
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px;
+}
+
+/* Form & Input Refinement */
+.app-dashboard-active .form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.app-dashboard-active .form-control,
+.app-dashboard-active .custom-select,
+.app-dashboard-active .selectize-input {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: var(--text-pure) !important;
+    border-radius: 14px !important;
+    padding: 14px 18px !important;
+    height: auto !important;
+    font-size: 15px !important;
+    /* Slightly larger for mobile tap comfort */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.app-dashboard-active .form-control:focus,
+.app-dashboard-active .custom-select:focus,
+.app-dashboard-active .selectize-input.focus {
+    border-color: var(--accent-blue) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15) !important;
+}
+
+.app-dashboard-active .form-control[disabled],
+.app-dashboard-active .form-control[readonly] {
+    background-color: #121214 !important;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Custom Switch - Luxury feel */
+.app-dashboard-active .custom-switch-indicator {
+    background: #27272A !important;
+    border: 1px solid var(--border-dim) !important;
+}
+
+.app-dashboard-active .custom-switch-input:checked~.custom-switch-indicator {
+    background: var(--accent-blue) !important;
+    border-color: var(--accent-blue) !important;
+}
+
+/* Total Charge Display - Premium Floating Look */
+.app-dashboard-active .total_charge {
+    background: rgba(212, 175, 55, 0.08) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: var(--text-pure) !important;
+    font-weight: 800 !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    width: 100% !important;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 25px !important;
+    box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.15) !important;
+}
+
+.app-dashboard-active .total_charge .charge_number {
+    color: var(--accent-blue) !important;
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+/* Place Order Button - High Contrast Premium Gold */
+.app-dashboard-active .btn-primary.btn-block {
+    background: linear-gradient(45deg, #B8860B, #D4AF37) !important;
+    color: #000000 !important;
+    border: none !important;
+    border-radius: 18px !important;
+    font-weight: 800 !important;
+    padding: 18px !important;
+    font-size: 16px !important;
+    margin-top: 20px !important;
+    box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.3) !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.app-dashboard-active .btn-primary.btn-block:active {
+    transform: scale(0.96);
+    background: #f8fafc !important;
+}
+
+/* Dark Mode Utilities */
+.app-dashboard-active .bg-dark-dim {
+    background-color: #1A1A1C !important;
+}
+
+.app-dashboard-active .text-dim {
+    color: var(--text-dim) !important;
+}
+
+/* Nav Pills - Segmented Control Look */
+.app-dashboard-active .nav-pills {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px;
+    border-radius: 14px;
+    display: flex;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.app-dashboard-active .nav-pills::-webkit-scrollbar {
+    display: none;
+}
+
+.app-dashboard-active .nav-pills .nav-link {
+    color: var(--text-dim);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 11px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex: 1;
+    text-align: center;
+}
+
+.app-dashboard-active .nav-pills .nav-link.active {
+    background: #FFFFFF !important;
+    color: #111113 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Orders Activity Log - Glass Refinement */
+.app-dashboard-active .order-activity-item {
+    background: var(--bg-card) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-dim) !important;
+    border-radius: 20px !important;
+    padding: 18px !important;
+    margin-bottom: 14px !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.app-dashboard-active .order-activity-item:active {
+    transform: scale(0.97);
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.app-dashboard-active .order-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.app-dashboard-active .order-id-pill {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.app-dashboard-active .order-date {
+    font-size: 12px;
+    color: var(--text-dim);
+}
+
+.app-dashboard-active .order-service-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-pure);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.app-dashboard-active .order-details-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.app-dashboard-active .order-pill {
+    font-size: 11px;
+    background: #1A1A1C;
+    color: var(--text-dim);
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-dim);
+}
+
+/* Status Badges - Professional & High-Contrast */
+.app-dashboard-active .badge {
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+}
+
+.app-dashboard-active .badge-success,
+.app-dashboard-active .badge-completed {
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: #22C55E !important;
+}
+
+.app-dashboard-active .badge-pending,
+.app-dashboard-active .badge-processing {
+    background: rgba(245, 158, 11, 0.1) !important;
+    color: #F59E0B !important;
+}
+
+.app-dashboard-active .badge-danger,
+.app-dashboard-active .badge-error,
+.app-dashboard-active .badge-fail {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #EF4444 !important;
+}
+
+.app-dashboard-active .badge-info,
+.app-dashboard-active .badge-inprogress {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #3B82F6 !important;
+}
+
+/* Pagination - Professional App Design */
+.app-dashboard-active .pagination {
+    margin-top: 30px !important;
+    justify-content: center !important;
+}
+
+.app-dashboard-active .page-link {
+    background: #131315 !important;
+    border: 1px solid var(--border-dim) !important;
+    color: var(--text-dim) !important;
+    border-radius: 10px !important;
+    margin: 0 4px !important;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.app-dashboard-active .page-item.active .page-link {
+    background: var(--accent-blue) !important;
+    border-color: var(--accent-blue) !important;
+    color: var(--text-pure) !important;
+}
+
+/* Wallet & Recharge Center */
+.app-dashboard-active .recharge-balance-card {
+    background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%) !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    text-align: center;
+    margin-bottom: 30px !important;
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3) !important;
+}
+
+.app-dashboard-active .recharge-balance-card h4 {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 10px !important;
+}
+
+.app-dashboard-active .recharge-balance-card .balance-amount {
+    color: #FFFFFF !important;
+    font-size: 36px !important;
+    font-weight: 800 !important;
+}
+
+/* Payment Method Cards */
+.app-dashboard-active .payment-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.app-dashboard-active .payment-method-item {
+    background: #131315 !important;
+    border: 1px solid var(--border-dim) !important;
+    border-radius: 16px !important;
+    padding: 20px 15px !important;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease !important;
+}
+
+.app-dashboard-active .payment-method-item:active,
+.app-dashboard-active .payment-method-item.active {
+    border-color: var(--accent-blue) !important;
+    background: rgba(59, 130, 246, 0.05) !important;
+    transform: translateY(-2px);
+}
+
+.app-dashboard-active .payment-method-item img {
+    height: 30px !important;
+    margin-bottom: 10px !important;
+    filter: brightness(1.2);
+}
+
+.app-dashboard-active .payment-method-item span {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-pure);
+}
+
+/* Form refinement for add-funds */
+.app-dashboard-active .add-funds-form-content {
+    background: #131315 !important;
+    padding: 25px !important;
+    border-radius: 20px !important;
+    border: 1px solid var(--border-dim) !important;
+}
+
+.app-dashboard-active .add-funds-form-content ul {
+    background: #1A1A1C !important;
+    padding: 15px 15px 15px 35px !important;
+    border-radius: 12px !important;
+    font-size: 13px !important;
+    color: var(--text-dim) !important;
+}
+
+.app-dashboard-active .add-funds-form-content .btn-primary {
+    width: 100% !important;
+    margin-top: 15px !important;
+}
+
+/* Support & Messaging */
+.app-dashboard-active .ticket-lists .item {
+    background: #131315 !important;
+    border: 1px solid var(--border-dim) !important;
+    border-radius: 16px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease !important;
+}
+
+.app-dashboard-active .ticket-lists .item:active {
+    background: rgba(59, 130, 246, 0.05) !important;
+}
+
+.app-dashboard-active .ticket-lists .subject {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: var(--text-pure) !important;
+    margin-bottom: 4px;
+}
+
+.app-dashboard-active .ticket-lists .time {
+    font-size: 12px !important;
+    color: var(--text-dim) !important;
+}
+
+/* Chat Bubbles */
+.app-dashboard-active .messages ul {
+    list-style: none !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.app-dashboard-active .messages li {
+    max-width: 85% !important;
+    padding: 12px 16px !important;
+    border-radius: 16px !important;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* User (Client) Messages - Right Aligned */
+.app-dashboard-active .messages li.sent {
+    align-self: flex-end;
+    background: var(--accent-blue) !important;
+    color: #FFFFFF !important;
+    border-bottom-right-radius: 4px !important;
+}
+
+/* Support (Admin) Messages - Left Aligned */
+.app-dashboard-active .messages li.replies {
+    align-self: flex-start;
+    background: #1A1A1C !important;
+    color: var(--text-pure) !important;
+    border: 1px solid var(--border-dim) !important;
+    border-bottom-left-radius: 4px !important;
+}
+
+.app-dashboard-active .messages .text-muted.small {
+    display: block;
+    font-size: 11px;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+.app-dashboard-active .messages li.sent .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Floating Add Button for Mobile Support */
+.app-dashboard-active .btn-add-ticket-floating {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    z-index: 1000;
+}
+
+/* PRO & Upsell Banners - Premium Design */
+.premium-upsell-card {
+    background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%) !important;
+    border: none !important;
+    box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3) !important;
+}
+
+.pro-status-card {
+    background: linear-gradient(135deg, #1e1e21 0%, #111113 100%) !important;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.pro-badge-glow {
+    background: #fbbf24;
+    color: #000;
+    font-weight: 800;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+    border-radius: 20px !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .app-dashboard-active .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .app-dashboard-active .statistics .item {
+        margin-bottom: 12px;
+    }
+}
+
+/* NEW ORDER PAGE: Full-width override (no side margins) */
+body.page-new-order .app-dashboard-active .container,
+body.page-new-order .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+}
+
+@media (max-width: 767px) {
+    body.page-new-order .app-dashboard-active .container,
+    body.page-new-order .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* Premium Animations */
+@keyframes premiumFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.premium-fade-in-up {
+    animation: premiumFadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-item {
+    animation: premiumFadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+/* Scroll Smoothing */
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================
+   ORDER PAGE ADDITIONS - Progress & Pills
+   ============================================ */
+
+/* Hide scrollbar utility */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Order Progress Container */
+.app-dashboard-active .order-progress-container {
+    margin-top: 12px;
+}
+
+.app-dashboard-active .order-progress-container .progress {
+    height: 6px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+}
+
+.app-dashboard-active .order-progress-container .progress-bar {
+    background: linear-gradient(90deg, #B8860B, #D4AF37) !important;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5) !important;
+    border-radius: 4px !important;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Status pill nav - make it display flex with gap */
+.app-dashboard-active .order-status-pills {
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding: 4px 2px 10px 2px !important;
+}
+
+.app-dashboard-active .order-status-pills .nav-link {
+    flex: 0 0 auto !important;
+}
+
+/* Active nav-link pill has gold glow */
+.app-dashboard-active .order-status-pills .nav-link.active {
+    background: #D4AF37 !important;
+    color: #0A0A0A !important;
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4) !important;
+    font-weight: 800 !important;
+}
+
+/* Refill/Cancel action buttons refinement */
+.app-dashboard-active .btn-refill {
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    border-radius: 10px !important;
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #3B82F6 !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    font-weight: 700 !important;
+}
+
+.app-dashboard-active .btn-cancel {
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    border-radius: 10px !important;
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #EF4444 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    font-weight: 700 !important;
+}

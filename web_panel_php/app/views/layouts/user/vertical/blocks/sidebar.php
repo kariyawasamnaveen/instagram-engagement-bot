@@ -1,0 +1,122 @@
+
+<style>
+  .tickets-number{
+    font-size: 14px !important;
+  }
+</style>
+
+<?php
+  $CI = &get_instance();
+  $CI->load->model('model');
+  $total_unread_tickets = $CI->model->count_results('id', TICKETS, ['user_read' => 1, 'uid' => session('uid')]);
+  $enable_item_api_menu = get_option('enable_api_tab');
+?>
+
+<?php
+  $sidebar_elements = app_config('controller')['user'];
+  if (!is_table_exists(AFFILIATE) || !get_option('affiliate_mode', 0)) unset($sidebar_elements['affiliates']);
+  if (is_table_exists(AFFILIATE)) {
+    $item_affiliate = $CI->model->get('status', AFFILIATE, ['uid' => session('uid')], '', '', true);
+    if ($item_affiliate && !$item_affiliate['status']) {
+      unset($sidebar_elements['affiliates']);
+    }
+  }
+  if (!is_table_exists(ORDERS_REFILL)) unset($sidebar_elements['refill']);
+  unset($sidebar_elements['membership']);
+  $xhtml = '<ul class="navbar-nav mb-md-4" id="menu">';
+  $xhtml .= sprintf('<li class="nav-item d-block d-lg-none">
+              <a class="nav-link bg-indigo mt-2 text-white" href="#">
+                %s : %s
+              </a>
+            </li>', lang('Balance'), esc($current_balance));
+
+
+  foreach ($sidebar_elements as $key => $item) {
+    $item_name = lang($item['name']);
+    if ($item['area_title']) {
+      $xhtml .= sprintf('<h6 class="navbar-heading first"><span class="text">%s</span></h6>', $item_name);
+    } else {
+      if ($key == 'api' && !$enable_item_api_menu) {
+        continue;
+      }
+      
+      $route_name = $item['route-name'];
+      $class_active = ($route_name == segment(1)) ? 'active' : '';
+
+      $xmtml_ticket_unread_numbers = null;
+      if ($key == 'tickets') {
+        $xmtml_ticket_unread_numbers = sprintf('<span class="ml-auto badge badge-warning">%s</span>', $total_unread_tickets);
+      }
+
+      $xhtml .= sprintf(
+        '<li class="nav-item">
+          <a class="nav-link %s" href="%s" data-toggle="tooltip" data-placement="right" title="%s">
+            <span class="nav-icon">
+              <i class="%s"></i>
+            </span>
+            <span class="nav-text">
+              %s
+              %s
+            </span>
+          </a>
+        </li>', $class_active, cn($route_name), $item_name, $item['icon'],  $item_name, $xmtml_ticket_unread_numbers);
+    }
+    
+  }
+  $xhtml .= sprintf('<li class="nav-item  d-block d-lg-none">
+        <a class="nav-link" href="#customize" data-toggle="modal">
+          <span class="nav-icon">
+            <i class="icon-fa fa fa-cogs"></i>
+          </span>
+          <span class="nav-text">
+            %s
+          </span>
+        </a>
+      </li>',  lang('Theme_Customizer'));
+  $xhtml .= '</ul>';
+?>
+<aside class="navbar navbar-side navbar-fixed js-sidebar" id="aside">
+  <div class="mobile-logo">
+    <a href="<?php echo cn('statistics'); ?>" class="navbar-brand text-inherit">
+      <img src="<?=get_option('website_logo', BASE."assets/images/logo.png")?>" alt="Website Logo" class="hide-navbar-folded navbar-brand-logo">
+      <img src="<?=get_option('website_logo_mark', BASE."assets/images/logo-mark.png")?>" alt="Website Logo" class="hide-navbar-expanded navbar-brand-logo">
+    </a>
+  </div>
+  <div class="flex-fill scroll-bar">
+    <?=$xhtml?>
+  </div>
+  <ul class="navbar-nav">
+    <li class="nav-item" id="pwa-install-item" style="display: none;">
+      <a href="javascript:void(0);" class="nav-link pwa-install-btn-sidebar" data-toggle="tooltip" data-placement="right" title="Install App">
+        <span class="nav-icon"><i class="icon fe fe-download"></i></span>
+        <span class="nav-text">Install App</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="<?php echo cn('auth/logout'); ?>" class="nav-link" data-toggle="tooltip" data-placement="right" title="<?php echo lang('Logout'); ?>">
+        <span class="nav-icon"><i class="icon fe fe-power"></i>
+        </span>
+        <span class="nav-text"><?php echo lang('Logout'); ?></span>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+<!-- Premium Mobile Floating Bottom Navigation -->
+<div class="mobile-bottom-nav d-lg-none">
+  <a href="<?=cn('statistics')?>" class="<?= (segment(1) == 'statistics') ? 'active' : '' ?>">
+    <i class="fe fe-home"></i>
+  </a>
+  <a href="<?=cn('order/add')?>" class="<?= (segment(1) == 'order' && segment(2) == 'add') ? 'active' : '' ?>">
+    <i class="fe fe-plus-circle" style="font-size: 28px; color: var(--premium-gold);"></i>
+  </a>
+  <a href="<?=cn('order')?>" class="<?= (segment(1) == 'order' && segment(2) != 'add') ? 'active' : '' ?>">
+    <i class="fe fe-list"></i>
+  </a>
+  <a href="<?=cn('tickets')?>" class="<?= (segment(1) == 'tickets') ? 'active' : '' ?>">
+    <i class="fe fe-mail"></i>
+  </a>
+  <a href="<?=cn('profile')?>" class="<?= (segment(1) == 'profile') ? 'active' : '' ?>">
+    <i class="fe fe-user"></i>
+  </a>
+</div>

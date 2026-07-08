@@ -1,0 +1,237 @@
+/* 
+   PREMIUM UI OVERHAUL - SMM PANEL 
+   Theme: Obsidian Black & Royal Gold
+   Mobile-First Focus
+*/
+
+:root {
+    --premium-gold: #D4AF37;
+    --premium-gold-light: #F9E272;
+    --premium-gold-dark: #B8860B;
+    --premium-black: #050505;
+    --premium-dark-gray: #121212;
+    --premium-card-bg: rgba(20, 20, 20, 0.8);
+    --premium-border: rgba(212, 175, 55, 0.2);
+    --premium-glow: rgba(212, 175, 55, 0.3);
+}
+
+body {
+    background-color: var(--premium-black) !important;
+    color: #ffffff !important;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Global Background and Scrollbar */
+.main-content, .page-wrapper {
+    background-color: var(--premium-black) !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--premium-gold);
+    border-radius: 10px;
+}
+
+/* Glassmorphism Cards */
+.card {
+    background: var(--premium-card-bg) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid var(--premium-border) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+    margin-bottom: 20px !important;
+}
+
+.card-header {
+    background: transparent !important;
+    border-bottom: 1px solid var(--premium-border) !important;
+    padding: 1.5rem !important;
+}
+
+.card-title {
+    color: var(--premium-gold) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Premium Buttons */
+.btn-primary {
+    background: linear-gradient(45deg, var(--premium-gold-dark), var(--premium-gold)) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 15px var(--premium-glow) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--premium-gold) !important;
+}
+
+/* Form Styling */
+.form-control, .custom-select {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+    height: 50px !important;
+    padding: 10px 15px !important;
+}
+
+.form-control:focus {
+    border-color: var(--premium-gold) !important;
+    box-shadow: 0 0 10px var(--premium-glow) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+label {
+    color: #AEAEB2 !important;
+    font-weight: 500 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Bottom Nav Overhaul */
+.mobile-nav-bar {
+    background: rgba(10, 10, 10, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    border-top: 1px solid var(--premium-border) !important;
+    height: 75px !important;
+}
+
+.mobile-nav-bar .nav-link {
+    color: #8E8E93 !important;
+    font-weight: 500 !important;
+}
+
+.mobile-nav-bar .nav-link.active {
+    color: var(--premium-gold) !important;
+}
+
+.mobile-nav-bar .nav-link i {
+    font-size: 24px !important;
+    margin-bottom: 4px;
+}
+
+.mobile-nav-bar .nav-link.active i {
+    color: var(--premium-gold) !important;
+    text-shadow: 0 0 10px var(--premium-gold);
+}
+
+/* Wallet Balance Styling */
+.balance-card {
+    background: linear-gradient(135deg, #1C1C1E, #2C2C2E) !important;
+    border-left: 4px solid var(--premium-gold) !important;
+}
+
+.balance-amount {
+    color: var(--premium-gold) !important;
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* New Order Specifics */
+.order-add .tabs-list .nav-pills .nav-link {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+    margin: 0 5px;
+}
+
+.order-add .tabs-list .nav-pills .nav-link.active {
+    background: var(--premium-gold) !important;
+    color: #000 !important;
+}
+
+/* Hide clutter */
+.service-description-box {
+    display: none; /* We will toggle this with JS or show via icon */
+}
+
+/* Custom Search UI */
+.ajaxSearchService.form-control {
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Targeting Buttons */
+.btn-set-targeting .btn-outline-primary {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    background: transparent !important;
+    border-radius: 20px !important;
+    margin-right: 8px !important;
+    padding: 8px 20px !important;
+}
+
+.btn-set-targeting .btn-outline-primary.active {
+    background: var(--premium-gold) !important;
+    border-color: var(--premium-gold) !important;
+    color: #000 !important;
+    box-shadow: 0 4px 12px var(--premium-glow) !important;
+}
+
+.bg-premium-dark {
+    background: rgba(10, 10, 10, 0.95) !important;
+}
+
+.border-gold-dim {
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Specific glows for mobile */
+@media screen and (max-width: 768px) {
+    .card {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(212, 175, 55, 0.05) !important;
+    }
+    
+    .balance-amount {
+        text-shadow: 0 0 15px var(--premium-gold);
+    }
+}
+
+/* Animations */
+@keyframes goldGlow {
+    0% { box-shadow: 0 0 5px var(--premium-glow); }
+    50% { box-shadow: 0 0 20px var(--premium-gold); }
+    100% { box-shadow: 0 0 5px var(--premium-glow); }
+}
+
+.btn-premium-glow {
+    animation: goldGlow 3s infinite;
+}
+/* Sticky Place Order Mobile */
+@media screen and (max-width: 768px) {
+    .form-actions.left {
+        position: fixed;
+        bottom: 85px;
+        left: 0;
+        right: 0;
+        padding: 0 15px;
+        z-index: 1000;
+    }
+    .main-content {
+        padding-bottom: 150px !important;
+    }
+}
+
+/* Auth Pages Premium Overhaul */
+.login-page, .signup-page {
+    background: radial-gradient(circle at top right, #1a1a1a, #000) !important;
+}
+
+.login-page .auth-box, .signup-page .auth-box {
+    background: rgba(20, 20, 20, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid var(--premium-border) !important;
+    border-radius: 25px !important;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}

@@ -1,0 +1,19 @@
+[Unit]
+Description=SMM Panel Python Playwright Automation Worker
+After=network.target mysql.service
+
+[Service]
+Type=simple
+User=root
+# Change the working directory to where you uploaded the worker.py
+WorkingDirectory=/var/www/vhosts/YOUR_AIRPROXY_USER.com/httpdocs/app/modules/cron/controllers/python_worker/
+# Path to python3 (it is recommended to use a virtual environment, e.g., /var/www/.../venv/bin/python)
+ExecStart=/usr/bin/python3 worker.py
+Restart=always
+RestartSec=5
+# Output logs
+StandardOutput=append:/var/log/smm_python_worker.log
+StandardError=append:/var/log/smm_python_worker_error.log
+
+[Install]
+WantedBy=multi-user.target
