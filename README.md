@@ -23,6 +23,20 @@ This repository contains the complete ecosystem, recently refactored into a clea
 * **Bulk Account Verifier**: Tests hundreds of accounts automatically, filtering out banned or SMS-challenged accounts in real-time.
 * **Progressive Web App (PWA)**: A modern, installable web panel for managing tasks on any device.
 
+## 📸 UI Showcase & Demo
+
+Watch the full system in action (Video Demo):
+https://github.com/user-attachments/assets/1ca97b8b-0ed0-4051-938d-55c2d9cac886
+
+### Progressive Web App (SmartPanel)
+The user-facing dashboard is designed as a sleek, dark-themed PWA.
+
+| Login Screen | Home Dashboard |
+|:---:|:---:|
+| ![Login Screen](assets/login_screen.jpg) | ![Home Dashboard](assets/home_dashboard.jpg) |
+| **New Order Campaign** | **Orders Console** |
+| ![New Order Screen](assets/new_order_screen.jpg) | ![Orders Console](assets/orders_console.jpg) |
+
 ## 🚀 Getting Started (Backend)
 
 ### Prerequisites
