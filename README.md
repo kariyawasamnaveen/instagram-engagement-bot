@@ -26,7 +26,8 @@ This repository contains the complete ecosystem, recently refactored into a clea
 ## 📸 UI Showcase & Demo
 
 Watch the full system in action (Video Demo):
-https://github.com/user-attachments/assets/1ca97b8b-0ed0-4051-938d-55c2d9cac886
+
+<video src="https://github.com/user-attachments/assets/1ca97b8b-0ed0-4051-938d-55c2d9cac886" controls="controls" muted="muted" width="100%"></video>
 
 ### Progressive Web App (SmartPanel)
 The user-facing dashboard is designed as a sleek, dark-themed PWA.
