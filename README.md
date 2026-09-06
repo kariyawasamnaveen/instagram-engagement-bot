@@ -27,7 +27,7 @@ This repository contains the complete ecosystem, recently refactored into a clea
 
 Watch the full system in action (Video Demo):
 
-https://github.com/user-attachments/assets/1ca97b8b-0ed0-4051-938d-55c2d9cac886
+https://raw.githubusercontent.com/kariyawasamnaveen/instagram-engagement-bot/main/assets/Screen_Recording_Converted.mp4
 
 ### Progressive Web App (SmartPanel)
 The user-facing dashboard is designed as a sleek, dark-themed PWA.
