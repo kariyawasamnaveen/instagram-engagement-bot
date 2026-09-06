@@ -1,58 +1,7 @@
-# Python
+.env
+.env.*
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Accounts and Sensitive Text Files
-working_accounts.txt
-goodAAAL.txt
-goodAAAL (1).txt
-dead_accounts.txt
-set 2.txt
-8_accounts_data.txt
-temp_acc_statuses.txt
+*.swp
 *.log
-
-# AirProxy / Config
-config.ini
-.env
-
-# PHP / SmartPanel
-web_panel_php/app/logs/*.php
-web_panel_php/app/*.log
-
-# Flutter / App
-mobile_app_flutter/.dart_tool/
-mobile_app_flutter/build/
-mobile_app_flutter/.flutter-plugins
-mobile_app_flutter/.flutter-plugins-dependencies
-mobile_app_flutter/.packages
-mobile_app_flutter/ios/Flutter/.last_build_id
-mobile_app_flutter/android/key.properties
-mobile_app_flutter/ios/Pods/
-
-# OS specific
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+node_modules/
