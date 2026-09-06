@@ -1,8 +1,9 @@
+import os
 import paramiko
 
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-client.connect('YOUR_SERVER_IP', username='root', password='YOUR_DB_PASSWORD')
+client.connect(os.getenv('SERVER_IP', '127.0.0.1'), username='root', password=os.getenv('DB_PASS', 'secret'))
 
 print("Zipping python and txt files on the server (excluding cache/profiles)...")
 # Find and zip only .py and .txt files, excluding the profiles directory

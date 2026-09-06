@@ -1,10 +1,11 @@
+import os
 import mysql.connector
 import datetime
 
 db = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="Root@123",
+    password=os.getenv("DB_PASS", "secret"),
     database="smm_db"
 )
 cursor = db.cursor()

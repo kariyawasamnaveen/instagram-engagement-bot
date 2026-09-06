@@ -1,3 +1,4 @@
+import os
 import paramiko
 import sys
 
@@ -6,7 +7,7 @@ client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 try:
     print("Connecting via SSH...")
-    client.connect('YOUR_SERVER_IP', username='root', password='YOUR_DB_PASSWORD', timeout=10)
+    client.connect(os.getenv('SERVER_IP', '127.0.0.1'), username='root', password=os.getenv('DB_PASS', 'secret'), timeout=10)
     print("Connected. Running query...")
     
     query = """

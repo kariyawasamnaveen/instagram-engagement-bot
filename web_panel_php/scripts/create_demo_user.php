@@ -4,7 +4,7 @@ define('PHPASS_HASH_PORTABLE', FALSE);
 require_once "app/third_party/MX/PasswordHash.php";
 
 $app_hasher = new PasswordHash(PHPASS_HASH_STRENGTH, PHPASS_HASH_PORTABLE);
-$password = "user1234";
+$password = getenv("DEFAULT_USER_PASS") ?: "user1234";
 $hashed_password = $app_hasher->HashPassword($password);
 
 $host = '127.0.0.1';

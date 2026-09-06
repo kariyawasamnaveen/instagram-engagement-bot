@@ -16,8 +16,8 @@ files_to_upload = [
     }
 ]
 
-transport = paramiko.Transport(('YOUR_SERVER_IP', 22))
-transport.connect(username='root', password='YOUR_DB_PASSWORD')
+transport = paramiko.Transport((os.getenv('SERVER_IP', '127.0.0.1'), 22))
+transport.connect(username='root', password=os.getenv('DB_PASS', 'secret'))
 sftp = paramiko.SFTPClient.from_transport(transport)
 
 for f in files_to_upload:

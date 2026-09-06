@@ -18,7 +18,7 @@ def update_db(username, status_code, cookies_list=None):
         py_script = f"""
 import mysql.connector
 import base64
-db = mysql.connector.connect(host='localhost',user='root',password='Root@123',database='smm_db')
+db = mysql.connector.connect(host='localhost',user='root',password=os.getenv('DB_PASS', 'secret'),database='smm_db')
 cursor = db.cursor()
 cookies_str = base64.b64decode('{b64_cookies}').decode('utf-8')
 cursor.execute("UPDATE ig_accounts SET status = %s, cookies = %s WHERE username = %s", ({status_code}, cookies_str, '{username}'))
@@ -27,7 +27,7 @@ db.commit()
     else:
         py_script = f"""
 import mysql.connector
-db = mysql.connector.connect(host='localhost',user='root',password='Root@123',database='smm_db')
+db = mysql.connector.connect(host='localhost',user='root',password=os.getenv('DB_PASS', 'secret'),database='smm_db')
 cursor = db.cursor()
 cursor.execute("UPDATE ig_accounts SET status = %s WHERE username = %s", ({status_code}, '{username}'))
 db.commit()
@@ -187,7 +187,7 @@ async def check_accounts():
     cmd = [
         "sshpass", "-p", "YOUR_DB_PASSWORD", "ssh", "-o", "StrictHostKeyChecking=no", 
         "root@YOUR_SERVER_IP", 
-        "python3 -c \"import mysql.connector, json; db=mysql.connector.connect(host='localhost',user='root',password='Root@123',database='smm_db'); cursor=db.cursor(dictionary=True); cursor.execute('SELECT username, password, cookies, user_agent, two_factor_secret FROM ig_accounts WHERE status IN (0, 3, 4)'); print(json.dumps(cursor.fetchall()))\""
+        "python3 -c \"import mysql.connector, json; db=mysql.connector.connect(host='localhost',user='root',password=os.getenv('DB_PASS', 'secret'),database='smm_db'); cursor=db.cursor(dictionary=True); cursor.execute('SELECT username, password, cookies, user_agent, two_factor_secret FROM ig_accounts WHERE status IN (0, 3, 4)'); print(json.dumps(cursor.fetchall()))\""
     ]
     
     result = subprocess.run(cmd, capture_output=True, text=True)
