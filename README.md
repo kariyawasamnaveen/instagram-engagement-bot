@@ -1,47 +1,59 @@
 # Instagram Engagement Bot (SmartPanel Ecosystem)
 
-An advanced, automated Instagram SMM (Social Media Marketing) panel backend and mobile application ecosystem. This project features Android app emulation (Instagrapi), human-like account warm-up sequences, automated likes/follows processing, proxy rotation, and bulk account verification to bypass anti-bot detections.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![PHP](https://img.shields.io/badge/PHP-8.0+-purple.svg)](https://www.php.net/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Project Structure
-This repository contains the complete ecosystem divided into three main components:
+An advanced, automated Instagram SMM (Social Media Marketing) panel backend and web application ecosystem. This project features Android app emulation, human-like account warm-up sequences, automated task processing, proxy rotation, and bulk account verification.
 
-1. **`backend_python/`**: The Python-based automation engine. Handles Instagram logins, executing likes/follows, account warm-ups, and bulk verifications using the `instagrapi` library and AirProxy for IP rotation.
-2. **`web_panel_php/`**: The SmartPanel PHP frontend and API layer. This is where users place orders and where the Python bots fetch their tasks.
-3. **`mobile_app_flutter/`**: The cross-platform mobile application built with Flutter/Dart for managing the panel on the go.
+## 🏗️ Architecture
 
-## Features
-* **Android Emulation**: Uses `instagrapi` to mimic legitimate Android devices, drastically reducing blocks compared to web-based automation.
-* **Smart Proxy Rotation**: Integrates with AirProxy API to automatically change the IP address between actions to evade location-based detection.
-* **Warm-up Engine**: Automatically ages new accounts by scrolling feeds and watching reels like a human before they perform heavy actions.
-* **Bulk Account Verifier**: Tests hundreds of accounts automatically, filtering out banned or SMS-challenged accounts.
+This repository contains the complete ecosystem, recently refactored into a clean, modular structure:
 
-## Getting Started (Backend)
+1. **`backend_python/`**: The Python-based automation engine. 
+   - **`src/`**: Contains the core worker loops (`api_worker_server.py`, `warmup_server.py`, `checkpoint_solver.py`).
+   - **`scripts/`**: Utility scripts for database maintenance, remote deployment, and account verification.
+   - **`config/`**: Configuration management using `.env` files for secure credential storage.
+2. **`web_panel_php/`**: The SmartPanel PHP frontend and API layer, built as a Progressive Web App (PWA). This acts as the command center where users place orders and the Python bots fetch their tasks.
+
+## ✨ Core Features
+* **Android Emulation**: Mimics legitimate Android devices to significantly reduce API blocks compared to standard web-based automation.
+* **Smart Proxy Rotation**: Integrated IP rotation to evade location-based rate limits and detection.
+* **Warm-up Engine**: Automatically ages new accounts by simulating human behavior (scrolling feeds, watching reels) before performing heavy actions.
+* **Bulk Account Verifier**: Tests hundreds of accounts automatically, filtering out banned or SMS-challenged accounts in real-time.
+* **Progressive Web App (PWA)**: A modern, installable web panel for managing tasks on any device.
+
+## 🚀 Getting Started (Backend)
 
 ### Prerequisites
 * Python 3.9+
+* PHP 8.0+ & MySQL Server
 * PM2 (Process Manager)
-* AirProxy Subscription (or similar rotating proxy)
-* MySQL Database
+* Rotating Proxy Subscription
 
 ### Installation
-1. Navigate to the backend directory:
+
+1. **Setup Environment Variables**:
+   Navigate to the backend configuration and create your `.env` file:
    ```bash
-   cd backend_python
+   cd backend_python/config
+   cp .env.example .env
+   # Edit .env with your actual database and server credentials
    ```
-2. Install the required Python packages:
+
+2. **Install Dependencies**:
    ```bash
+   cd ../
    pip install -r requirements.txt
    ```
-   *(Note: Ensure you install `instagrapi`, `requests`, `mysql-connector-python`, etc.)*
 
-3. **Configuration**: Update your database credentials and AirProxy keys in the worker scripts. Search for placeholders like `YOUR_DB_PASSWORD` and `YOUR_AIRPROXY_API_KEY` and replace them with your actual credentials.
-
-4. **Running the Bots**:
-   Use PM2 to run the scripts continuously in the background:
+3. **Running the Bots**:
+   Use PM2 to run the microservices continuously in the background:
    ```bash
+   cd src/
    pm2 start api_worker_server.py --name "IG_Main_Worker"
    pm2 start warmup_server.py --name "IG_Warmup_Bot"
    ```
 
-## Disclaimer
-This project was developed for educational and automation testing purposes. Please use it responsibly and in accordance with Instagram's Terms of Service.
+## ⚠️ Disclaimer
+This project was developed strictly for **educational and automation testing purposes**. Use of this software to artificially inflate engagement metrics may violate Instagram's Terms of Service. Please use responsibly.
