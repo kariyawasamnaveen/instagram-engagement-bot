@@ -6,7 +6,7 @@
 
 An advanced, automated Instagram SMM (Social Media Marketing) panel backend and web application ecosystem. This project features Android app emulation, human-like account warm-up sequences, automated task processing, proxy rotation, and bulk account verification.
 
-## 🏗️ Architecture
+## Architecture
 
 This repository contains the complete ecosystem, recently refactored into a clean, modular structure:
 
@@ -16,18 +16,18 @@ This repository contains the complete ecosystem, recently refactored into a clea
    - **`config/`**: Configuration management using `.env` files for secure credential storage.
 2. **`web_panel_php/`**: The SmartPanel PHP frontend and API layer, built as a Progressive Web App (PWA). This acts as the command center where users place orders and the Python bots fetch their tasks.
 
-## ✨ Core Features
+## Core Features
 * **Android Emulation**: Mimics legitimate Android devices to significantly reduce API blocks compared to standard web-based automation.
 * **Smart Proxy Rotation**: Integrated IP rotation to evade location-based rate limits and detection.
 * **Warm-up Engine**: Automatically ages new accounts by simulating human behavior (scrolling feeds, watching reels) before performing heavy actions.
 * **Bulk Account Verifier**: Tests hundreds of accounts automatically, filtering out banned or SMS-challenged accounts in real-time.
 * **Progressive Web App (PWA)**: A modern, installable web panel for managing tasks on any device.
 
-## 📸 UI Showcase & Demo
+## UI Showcase & Demo
 
 Watch the full system in action (Video Demo):
 
-<video src="https://github.com/user-attachments/assets/1ca97b8b-0ed0-4051-938d-55c2d9cac886" controls="controls" muted="muted" width="100%"></video>
+https://github.com/user-attachments/assets/1ca97b8b-0ed0-4051-938d-55c2d9cac886
 
 ### Progressive Web App (SmartPanel)
 The user-facing dashboard is designed as a sleek, dark-themed PWA.
@@ -38,7 +38,7 @@ The user-facing dashboard is designed as a sleek, dark-themed PWA.
 | **New Order Campaign** | **Orders Console** |
 | ![New Order Screen](assets/new_order_screen.jpg) | ![Orders Console](assets/orders_console.jpg) |
 
-## 🚀 Getting Started (Backend)
+## Getting Started (Backend)
 
 ### Prerequisites
 * Python 3.9+
@@ -70,5 +70,5 @@ The user-facing dashboard is designed as a sleek, dark-themed PWA.
    pm2 start warmup_server.py --name "IG_Warmup_Bot"
    ```
 
-## ⚠️ Disclaimer
+## Disclaimer
 This project was developed strictly for **educational and automation testing purposes**. Use of this software to artificially inflate engagement metrics may violate Instagram's Terms of Service. Please use responsibly.
